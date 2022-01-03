@@ -2,7 +2,7 @@
   "name": "Poke Battle",
   "version": "0.1.0",
   "description": "SPA to build your pokemon team",
-  "main": "scripts/main.js",
+  "main": "src/scripts/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js",
