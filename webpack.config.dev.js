@@ -37,7 +37,6 @@ module.exports = {
     client: {
       logging: "log",
       overlay: true,
-      progress: true,
       reconnect: true,
     },
   },
