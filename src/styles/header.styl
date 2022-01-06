@@ -1,0 +1,65 @@
+
+.header
+  background-color: $ui-01
+  display: flex
+  padding: 0 $spacing-06-rem
+  height: $spacing-09-rem
+  align-items: center
+
+  a
+    color: $text-01
+    text-decoration: none
+
+  div
+    margin-right: $spacing-06-rem
+
+  &--menu
+    display none
+
+  &--name
+    font-size: $spacing-05-rem
+    &::after
+      content: '|'
+      color: $decorative-01
+    & a:hover
+      color: $text-02
+
+  &--links
+    display: flex
+    &--item
+      display: inline-block
+      padding $spacing-04-rem $spacing-07-rem
+      &:hover
+        background-color: $ui-02
+
+      &.is-active
+        background-color: $ui-02
+        &:hover
+          background-color: $ui-03
+
+// @media screen and (max-width: 600px)
+  .header--menu
+    display: inline-block
+    width: $spacing-07-rem
+    cursor: pointer
+
+    .line
+      height: $spacing-01-rem
+      width: 100%
+      margin: $spacing-03-rem 0
+      display: block
+      background-color: $icon-01
+      transition: all 0.3s ease-in-out
+
+    &.is-active .line
+      background-color: $active-ui
+      &:nth-child(odd)
+        opacity: 0
+      &:nth-child(1)
+        transform: translateX(-100%)
+      &:nth-child(3)
+        transform: translateX(100%)
+
+    &:hover .line
+      margin: $spacing-04-rem 0
+      background-color: $hover-primary-text
