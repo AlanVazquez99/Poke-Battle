@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
+  <header>
+    <nav class="header">
+      <div class="header--menu" onclick="event.stopPropagation(); this.classList.toggle('is-active');">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <div class="header--name">
+        <a href="/#/">Poke <span class="text__bold"> Battles </span></a>
+      </div>
+      <div class="header--links">
+        <a class="header--links--item text__light" onclick="event.stopPropagation(); this.classList.toggle('is-active');" href="/#/pokedex">||> Pokedex <||</a>
+        <a class="header--links--item text__light" onclick="event.stopPropagation(); this.classList.toggle('is-active');" href="/#/types">||> Types <||</a>
+        <a class="header--links--item text__light" onclick="event.stopPropagation(); this.classList.toggle('is-active');" href="/#/moves">||> Moves <||</a>
+      </div>
+    </nav>
+  </header>
 </body>
+
 </html>
