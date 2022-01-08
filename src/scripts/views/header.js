@@ -1,20 +1,14 @@
-const menuElement = document.querySelector(".header--menu");
-const linksElement = document.querySelector(".header--links");
+export const toggleActive = (element) => element.classList.toggle("is-active");
 
-const toggleActive = (element) => element.classList.toggle("is-active");
-
-function updateHeaderLink() {
+export function updateHeaderLink() {
   const location = window.location.hash;
+  if (!location) return;
+
   const linkClass = "header--links--item";
 
   const active = document.querySelector(`.${linkClass}[href='${location}']`);
   const previousActive = document.querySelector(`.${linkClass}.is-active`);
 
   !previousActive || toggleActive(previousActive);
-  toggleActive(active);
+  active && toggleActive(active);
 }
-
-menuElement.addEventListener("click", () => toggleActive(menuElement));
-["load", "hashchange"].forEach((eventType) =>
-  window.addEventListener(eventType, updateHeaderLink)
-);
