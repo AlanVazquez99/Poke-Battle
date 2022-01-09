@@ -1,8 +1,12 @@
+import Error404 from "@html/templates/404.html";
+
 const routes = {
-  "#/": `<h1>Welcome</h1>`,
+  "#/": `<h1>Pokemon</h1>`,
   "#/pokemon/": `<h1>Pokemon</h1>`,
   "#/types/": `<h1>Types</h1>`,
   "#/moves/": `<h1>Moves</h1>`,
+
+  Error404: () => Error404,
 
   "#/pokemon/:id/": `<h1>Pokemon :ID</h1>`,
 };
@@ -21,10 +25,11 @@ function parseRoutes(routes) {
     if (!route.includes(":")) {
       staticRoutes[route] = routes[route];
     } else {
-      let view = routes[route];
-      let pattern = getPattern(route);
-
-      dynamicRoutes.push({ route, view, pattern });
+      dynamicRoutes.push({
+        route,
+        view: routes[route],
+        pattern: getPattern(route),
+      });
     }
   }
 

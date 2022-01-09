@@ -6,7 +6,9 @@ export function updateHeaderLink() {
 
   const linkClass = "header--links--item";
 
-  const active = document.querySelector(`.${linkClass}[href='${location}']`);
+  // from `#/user/name/` to `#/user`
+  const baseRoute = location.replace(/(#\/\w+)\/.*/g, "$1");
+  const active = document.querySelector(`.${linkClass}[href^='${baseRoute}']`);
   const previousActive = document.querySelector(`.${linkClass}.is-active`);
 
   !previousActive || toggleActive(previousActive);

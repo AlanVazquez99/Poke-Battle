@@ -1,0 +1,30 @@
+.not-found {
+  width: 560px;
+  height: 225px;
+}
+
+.starry-sky {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.notfound-copy {
+  color: #fff;
+  position: fixed;
+  top: 25px;
+  right: 10%;
+  text-align: right;
+}
+
+/* change to alternating star opacities */
+.all-stars {
+  animation: blinkblink 5s linear infinite;
+}
+
+@keyframes blinkblink {
+  50% {
+    opacity: 0.1;
+  }
+}

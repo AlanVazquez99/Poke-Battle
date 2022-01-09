@@ -1,5 +1,13 @@
+// Utils
+import "@utils/string"
+
+// Router
 import router from "@router/router";
-import { toggleActive, updateHeaderLink } from "@views/header";
+
+// Components
+import { toggleActive, updateHeaderLink } from "@components/header";
+
+// Styles
 import "@styles/main.styl";
 
 const menuElement = document.querySelector(".header--menu");
