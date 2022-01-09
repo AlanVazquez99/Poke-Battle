@@ -23,7 +23,7 @@ module.exports = {
       "@html": path.resolve(__dirname, "public"),
       "@styles": path.resolve(__dirname, "src/styles"),
       "@scripts": path.resolve(__dirname, "src/scripts"),
-      "@routes": path.resolve(__dirname, "src/scripts/routes"),
+      "@router": path.resolve(__dirname, "src/scripts/router"),
       "@templates": path.resolve(__dirname, "src/scripts/templates"),
       "@components": path.resolve(__dirname, "src/scripts/components"),
       "@utils": path.resolve(__dirname, "src/scripts/utils"),
