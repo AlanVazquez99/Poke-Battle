@@ -16,24 +16,20 @@ function getPattern(route) {
 function parseRoutes(routes) {
   let staticRoutes = {};
   let dynamicRoutes = [];
-  for (const route in routes) {
-    if (route.includes(":")) {
-      const dynamicRoute = {
-        route,
-        view: routes[route],
-        pattern: getPattern(route),
-      };
 
-      dynamicRoutes.push(dynamicRoute);
-    } else {
+  for (const route in routes) {
+    if (!route.includes(":")) {
       staticRoutes[route] = routes[route];
+    } else {
+      let view = routes[route];
+      let pattern = getPattern(route);
+
+      dynamicRoutes.push({ route, view, pattern });
     }
   }
-  const newRoutes = {
-    staticRoutes,
-    dynamicRoutes: dynamicRoutes.sort((a, b) => b.route.localeCompare(a.route)),
-  };
-  return newRoutes;
+
+  dynamicRoutes = dynamicRoutes.sort((a, b) => b.route.localeCompare(a.route));
+  return { staticRoutes, dynamicRoutes };
 }
 
 export default parseRoutes(routes);
