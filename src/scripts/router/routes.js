@@ -1,8 +1,9 @@
 import Error404 from "@html/templates/404.html";
+import Card from "@components/card"
 
 const routes = {
-  "#/": `<h1>Pokemon</h1>`,
-  "#/pokemon/": `<h1>Pokemon</h1>`,
+  "#/": Card,
+  "#/pokemon/": Card,
   "#/types/": `<h1>Types</h1>`,
   "#/moves/": `<h1>Moves</h1>`,
 
