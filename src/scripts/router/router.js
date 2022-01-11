@@ -6,23 +6,23 @@ function resolveRoute(route) {
   for (const dynamicRoute of routes.dynamicRoutes) {
     let match = route.match(dynamicRoute.pattern);
     if (match) {
-      const view = dynamicRoute.view;
-      return typeof view === "string" ? view : view();
+      return dynamicRoute.view;
     }
   }
 }
 
-function router(route) {
+async function router(route) {
   if (route[route.length - 1] !== "/") {
     route = route + "/";
     location.hash = route;
   }
 
-  let content =
+  let view =
     routes.staticRoutes[route] ??
     resolveRoute(route) ??
-    routes.staticRoutes["Error404"]();
+    routes.staticRoutes["Error404"];
 
+  let content = typeof view === "string" ? view : await view();
   contentNode.innerHTML = content;
 }
 
