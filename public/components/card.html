@@ -1,18 +1,24 @@
 <div class="card">
+  <div class="card--id">
+    <span>${id}</span>
+  </div>
   <div class="card--img">
     <img src="${img}">
   </div>
-
   <div class="card--title">
     <h3>${name}</h3>
   </div>
 
-  <div class="card--info">
-    Nº ${id}
-  </div>
-
   <div class="card--types">
-    <div class="type type__${type1}">${type1}</div>
-    <div class="type type__${type2}">${type2}</div>
+    <div class="type type__${type1}">
+      <div class="type--icon"></div>
+      <span>${type1}</span>
+    </div>
+    <div class="type type__${type2}">
+      <div class="overlay"></div>
+      <div class="type--icon"></div>
+      <span>${type2}</span>
+    </div>
   </div>
+  <div class="card--stats"><img src="../../src/assets/images/spider-chart.png" alt=""></div>
 </div>

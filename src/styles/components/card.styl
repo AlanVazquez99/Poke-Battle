@@ -1,7 +1,147 @@
-// .card
-//   width: $card-width
-//   height: $card-height
-//   position: relative
-//   overflow: hidden
-//   border-radius: $spacing-04-px
-//   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5)
+$steel    = hsl(200, 25%, 50%)
+$normal   = hsl(210, 5%,  60%)
+$fighting = hsl(345, 50%, 55%)
+$flying   = hsl(215, 40%, 70%)
+$poison   = hsl(275, 40%, 60%)
+$ground   = hsl(20,  60%, 55%)
+$rock     = hsl(45,  35%, 65%)
+$bug      = hsl(80,  45%, 50%)
+$ghost    = hsl(225, 35%, 50%)
+$fire     = hsl(25,  95%, 70%)
+$water    = hsl(210, 60%, 60%)
+$grass    = hsl(110, 40%, 55%)
+$electric = hsl(45,  90%, 65%)
+$psychic  = hsl(360, 80%, 70%)
+$ice      = hsl(175, 45%, 65%)
+$dragon   = hsl(210, 80%, 40%)
+$dark     = hsl(270, 10%, 35%)
+$fairy    = hsl(300, 55%, 75%)
+
+
+.card
+  width: 220px
+  height: 300px
+  border-radius: $spacing-04-px
+  background-color: $ui-01
+  overflow: hidden
+
+  &:hover
+    background-color: $N600
+
+    .card--id, .card--stats img, .type
+      background-color: $N400
+
+  .card--id, .card--stats, .type, .card--title h3
+    text-align: center
+
+  .card--id, .card--stats img, .type
+    background-color: $ui-02
+
+  .card--id
+    width: $spacing-09-rem
+    padding: $spacing-03-rem 0
+    border-radius: $spacing-04-px 0
+    position: absolute
+
+  .card--img
+    height: 55%
+    padding-top: $spacing-03-rem
+    margin-bottom: - $spacing-04-rem
+
+    &::before
+      content: ''
+      display: block
+      height: 80%
+      background-image: url("../../assets/images/pokeball.png") 
+      opacity: 0.2
+      background-size: 128px
+      background-repeat: no-repeat
+      background-position: center
+
+    img
+      display block
+      position relative
+      top: -80%
+      margin: auto
+      height 100%
+
+  .card--title h3
+    margin: 0
+    margin-bottom: $spacing-04-rem
+    text-transform: uppercase
+
+  .card--types
+    display: flex
+    justify-content: space-evenly
+
+    .type
+      min-width: $spacing-11-rem
+      padding: $spacing-02-rem $spacing-03-rem
+      border-radius: $spacing-03-px
+
+      &.type__steel
+        background-color: rgba($steel, 0.3)
+
+      &.type__normal
+        background-color: rgba($normal, 0.3)
+
+      &.type__fighting
+        background-color: rgba($fighting, 0.3)
+
+      &.type__flying
+        background-color: rgba($flying, 0.3)
+
+      &.type__poison
+        background-color: rgba($poison, 0.3)
+
+      &.type__ground
+        background-color: rgba($ground, 0.3)
+
+      &.type__rock
+        background-color: rgba($rock, 0.3)
+
+      &.type__bug
+        background-color: rgba($bug, 0.3)
+
+      &.type__ghost
+        background-color: rgba($ghost, 0.3)
+
+      &.type__fire
+        background-color: rgba($fire, 0.3)
+
+      &.type__water
+        background-color: rgba($water, 0.3)
+
+      &.type__grass
+        background-color: rgba($grass, 0.3)
+
+      &.type__electric
+        background-color: rgba($electric, 0.3)
+
+      &.type__psychic
+        background-color: rgba($psychic, 0.3)
+
+      &.type__ice
+        background-color: rgba($ice, 0.3)
+
+      &.type__dragon
+        background-color: rgba($dragon, 0.3)
+
+      &.type__dark
+        background-color: rgba($dark, 0.3)
+
+      &.type__fairy
+        background-color: rgba($fairy, 0.3)
+
+
+  .card--stats
+    margin: $spacing-04-rem
+
+    img
+      width: $spacing-07-rem
+      padding: $spacing-03-rem
+      border-radius: 50%
+      cursor pointer
+
+      &:hover
+        background-color: $ui-03
